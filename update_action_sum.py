@@ -5,11 +5,32 @@ shp_path = r"data\WAP_SHP\wap.shp"
 field_name = "Action_Sum"
 
 mapping = {
-    "Fence & Revege": "Fence & Revege",
-    "Fence & Revegetate to improve Ecology": "Fence & Revege",
-    "Fence & revegetate to improve ecology": "Fence & Revege",
-    "Fence & revegetate to improve habitat": "Fence & Revege",
-    "Fence & revegetate to improve vegetation": "Fence & Revege"
+    "Control Spiny rush": "Control Spiny Rush",
+    "Establish wetland to improve Water Quality": "Establish Wetland to Improve Water Quality",
+    "Fence & Revege": "Fencing & Revegetation",
+    "Fence & Revegetate to improve Ecology": "Fencing & Revegetation",
+    "Fence & revegetate to improve ecology": "Fencing & Revegetation",
+    "Fence & revegetate to improve habitat": "Fencing & Revegetation",
+    "Fence & revegetate to improve vegetation": "Fencing & Revegetation",
+    "Fencing & Revegetation" : "Fencing & Revegetation",
+    "Fencing & revegetation" : "Fencing & Revegetation",
+    "Fence / Offstream watering" : "Fence & Offstream Watering",
+    "Fence to protect platypus" : "Fence to Protect Platypus",
+    "Platypus & water quality monitoring" : "Platypus & Water Quality Monitoring",
+    "Platypus & water quality/biological monitoring" : "Platypus & Water Quality/Biological Monitoring",
+    "Platypus study" : "Platypus Study",
+    "Water Quality" : "Water Quality Monitoring",
+    "Water Quality monitoring" : "Water Quality Monitoring",
+    "Water quality monitoring" : "Water Quality Monitoring",
+    "Wetland to improve water quality" : "Wetland to Improve Water Quality",
+    "Vegetate" : "Vegetation",
+    "Fence & Revegetate" : "Fencing & Revegetation",
+    "Flood signage" : "Flood Signage",
+    "Investigate" : "Investigation",
+    "Monitor" : "Monitoring",
+    "Wetland to Improve Water Quality" : "Establish Wetland to Improve Water Quality"
+
+
 }
 
 sf = shapefile.Reader(shp_path)

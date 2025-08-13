@@ -1,4 +1,4 @@
-import csv
+import pandas as pd
 import os
 import tempfile
 
@@ -34,26 +34,12 @@ mapping = {
     "Wetland to Improve Water Quality": "Establish Wetland to Improve Water Quality"
 }
 
-with open(csv_path, "r", newline="", encoding="latin-1") as f_in:
-    reader = csv.reader(f_in)
-    rows = list(reader)
-
-header = rows[0]
-idx = header.index(field_name)
+df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
+for col in df.select_dtypes(include="object"):
+    df[col] = df[col].str.strip()
+df[field_name] = df[field_name].replace("", "Unspecified").map(lambda v: mapping.get(v, v))
 
 fd, tmp_path = tempfile.mkstemp(dir=os.path.dirname(csv_path), suffix=".csv")
 os.close(fd)
-
-with open(tmp_path, "w", newline="", encoding="latin-1") as f_out:
-    writer = csv.writer(f_out)
-    writer.writerow(header)
-    for r in rows[1:]:
-        if r[idx] is None or str(r[idx]).strip() == "":
-            r[idx] = "Unspecified"
-        elif r[idx] in mapping:
-            r[idx] = mapping[r[idx]]
-        r[idx] = r[idx].strip()
-        r = [c.strip() if isinstance(c, str) else c for c in r]
-        writer.writerow(r)
-
+df.to_csv(tmp_path, index=False)
 os.replace(tmp_path, output_path)

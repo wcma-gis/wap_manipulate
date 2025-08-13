@@ -18,6 +18,7 @@ mapping = {
     "Fence to protect platypus" : "Fence to Protect Platypus",
     "Platypus & water quality monitoring" : "Platypus & Water Quality Monitoring",
     "Platypus & water quality/biological monitoring" : "Platypus & Water Quality/Biological Monitoring",
+    "Platypus & Water Quality/Biological Monitoring" : "Platypus & Water Quality Monitoring",
     "Platypus study" : "Platypus Study",
     "Water Quality" : "Water Quality Monitoring",
     "Water Quality monitoring" : "Water Quality Monitoring",

@@ -7,6 +7,7 @@ dest = "data/Master3.csv"
 transformer = Transformer.from_crs("EPSG:28354", "EPSG:4326", always_xy=True)
 
 def extract_first_number_6_or_more_digits(s):
+    s = str(s).replace(",", "")
     matches = re.findall(r"\b\d{6,}\b", str(s))
     return float(matches[0]) if matches else None
 
